@@ -1,0 +1,7 @@
+BOT_ADMINS={(list) List of user IDs who are given admin permissions}
+BOT_PRESENCE={(str) Bot Presence when online}
+DISCORD_TOKEN={(str) Discord Token}
+GUILD_IDS={(list) List of guild IDs where the bot will be operating in}
+THUMBNAIL={(str) Path to file in local directory (e.g. attachment://thumbnail.png) or a url to the image}
+
+# Replace each field as appropriate (including the curly brackets) and rename file to ".env"
