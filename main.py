@@ -653,13 +653,12 @@ async def show_all(ctx):
 	em.set_footer(text="Positive value: user owes money.\nNegative value: user is owed money.")
 
 	for i, row in enumerate(guild_db):
-		print(row)
 		try:
 			name = await id_to_name(ctx, int(row[0]))
-			if row[1] < 0:
-				em.add_field(name=name, value=f"-£{abs(row[1]) / 100:.2f}")
+			if int(row[1]) < 0:
+				em.add_field(name=name, value=f"-£{abs(int(row[1])) / 100:.2f}")
 			else:
-				em.add_field(name=name, value=f"£{abs(row[1]) / 100:.2f}")
+				em.add_field(name=name, value=f"£{abs(int(row[1])) / 100:.2f}")
 			if not i % 2 and i != len(guild_db) - 1:
 				em.add_field(name="\u200b", value="\u200b")
 		except discord.errors.NotFound:
